@@ -1,0 +1,19 @@
+{
+    "name": "honobono",
+    "scripts": {
+        "dev": "bun run --hot main.ts & tailwindcss -i ./assets/styles-raw.css -o ./assets/styles.css --watch --minify"
+    },
+    "dependencies": {
+        "dayjs": "^1.11.13",
+        "drizzle-orm": "^0.44.2",
+        "hono": "^4.8.4",
+        "mysql2": "^3.14.2"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.11",
+        "@types/bun": "latest",
+        "drizzle-kit": "^0.31.4",
+        "feconfig-bhs": "^1.0.7",
+        "tailwindcss": "^4.1.11"
+    }
+}
