@@ -1,45 +1,35 @@
-import { readdir } from 'node:fs/promises';
-import { existsSync, mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync } from 'fs'
+import * as islands from 'island'
+import { join } from 'path'
 
-const islandDir = './island';
-const outDir = './assets/island';
-
-console.log('Bun island builder starting...');
+const outDir = join(import.meta.dir, '..', 'assets', 'island')
 
 const build = async () => {
-    console.log('Building islands...');
+    console.log(`Building client bundle with islands: ${Object.keys(islands).join(', ')}`)
     try {
         if (!existsSync(outDir)) {
-            mkdirSync(outDir, { recursive: true });
-        }
-
-        const files = await readdir(islandDir);
-        const entrypoints = files
-            .filter(file => file.endsWith('.tsx') || file.endsWith('.ts'))
-            .map(file => `${islandDir}/${file}`);
-
-        if (entrypoints.length === 0) {
-            console.log('No islands or client script found to build.');
-            return;
+            mkdirSync(outDir, { recursive: true })
         }
 
         const result = await Bun.build({
-            entrypoints,
+            entrypoints: [join(import.meta.dir, '..', 'island', 'client.tsx')],
             outdir: outDir,
             target: 'browser',
             naming: '[name].js',
             sourcemap: 'inline',
-        });
+        })
 
         if (!result.success) {
-            console.error('Island build failed:');
-            console.error(result.logs.join('\n'));
+            console.error('Client build failed:')
+            for (const log of result.logs) {
+                console.error(log)
+            }
         } else {
-            console.log('Islands built successfully!');
+            console.log('Client bundle built successfully!')
         }
     } catch (e) {
-        console.error('An error occurred during island build:', e);
+        console.error('An error occurred during client build:', e)
     }
-};
+}
 
-await build();
+await build()

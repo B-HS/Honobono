@@ -48,6 +48,9 @@
             ],
             "drizzle/*": [
                 "./drizzle/*"
+            ],
+            "island/*": [
+                "./island/*"
             ]
         }
     }
