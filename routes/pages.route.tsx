@@ -1,13 +1,19 @@
 import { Hono } from 'hono'
-import { Home } from 'pages'
-import { Layout } from '../widgets/layout'
+import { Home } from 'pages/home'
+import { Layout } from 'widgets/layout'
+
+type Env = {
+    Variables: {
+        title: string
+    }
+}
 
 export const PagesRoute = () => {
-    const app = new Hono()
-
+    const app = new Hono<Env>()
     app.get('/', (c) => {
-        return c.html(
-            <Layout pageId='home'>
+        c.set('title', 'Home')
+        return c.render(
+            <Layout>
                 <Home />
             </Layout>,
         )

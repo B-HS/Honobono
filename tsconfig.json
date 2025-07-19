@@ -4,25 +4,51 @@
         "module": "ESNext",
         "moduleResolution": "node",
         "jsx": "react-jsx",
-        "jsxImportSource": "hono/jsx",
+        "jsxImportSource": "react",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
-            "islands/*": ["./islands/*"],
-            "pages/*": ["./pages/*"],
-            "routes/*": ["./routes/*"],
-            "utils/*": ["./utils/*"],
-            "widgets/*": ["./widgets/*"],
-            "assets/*": ["./assets/*"],
-            "types/*": ["./types/*"],
-            "hooks/*": ["./hooks/*"],
-            "features/*": ["./features/*"],
-            "services/*": ["./services/*"],
-            "middlewares/*": ["./middlewares/*"],
-            "shared/*": ["./shared/*"],
-            "drizzle/*": ["./drizzle/*"]
+            "islands/*": [
+                "./islands/*"
+            ],
+            "pages/*": [
+                "./pages/*"
+            ],
+            "routes/*": [
+                "./routes/*"
+            ],
+            "utils/*": [
+                "./utils/*"
+            ],
+            "widgets/*": [
+                "./widgets/*"
+            ],
+            "assets/*": [
+                "./assets/*"
+            ],
+            "types/*": [
+                "./types/*"
+            ],
+            "hooks/*": [
+                "./hooks/*"
+            ],
+            "features/*": [
+                "./features/*"
+            ],
+            "services/*": [
+                "./services/*"
+            ],
+            "middlewares/*": [
+                "./middlewares/*"
+            ],
+            "shared/*": [
+                "./shared/*"
+            ],
+            "drizzle/*": [
+                "./drizzle/*"
+            ]
         }
     }
 }
