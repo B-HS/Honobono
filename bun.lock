@@ -4,14 +4,14 @@
     "": {
       "name": "honobono",
       "dependencies": {
-        "@types/react": "^19.1.8",
-        "@types/react-dom": "^19.1.6",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
         "dayjs": "^1.11.13",
         "drizzle-orm": "^0.44.2",
         "hono": "^4.8.4",
         "mysql2": "^3.14.2",
-        "react": "19",
-        "react-dom": "19",
+        "react": "^19",
+        "react-dom": "^19",
       },
       "devDependencies": {
         "@tailwindcss/cli": "^4.1.11",
