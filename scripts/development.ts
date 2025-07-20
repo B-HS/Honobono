@@ -12,7 +12,7 @@ const build = async () => {
         }
 
         const result = await Bun.build({
-            entrypoints: [join(import.meta.dir, '..', 'island', 'client.tsx')],
+            entrypoints: [join(import.meta.dir, '..', 'island', 'client.ts')],
             outdir: outDir,
             target: 'browser',
             naming: '[name].js',
