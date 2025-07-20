@@ -7,6 +7,7 @@
         "dev": "bun run dev:server & bun run dev:island & bun run dev:css"
     },
     "dependencies": {
+        "@hono/react-renderer": "^1.0.1",
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "dayjs": "^1.11.13",
