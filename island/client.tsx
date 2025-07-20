@@ -1,6 +1,6 @@
+import * as islands from 'island'
 import { createElement } from 'react'
 import { createRoot } from 'react-dom/client'
-import * as islands from 'island'
 
 const islandMap: Record<string, React.ComponentType<any>> = islands
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-island]').forEach(mountIsland)
 })
 
-function mountIsland(element: Element) {
+const mountIsland = (element: Element) => {
     const componentName = element.getAttribute('data-island')
     if (!componentName) return
 
